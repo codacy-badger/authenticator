@@ -14,9 +14,9 @@ def auth_user(username, password, list_of_users)
       attempts = 3
       return user_record
     else
-      return "Incorrect username or password"
     end
   end
+   "Incorrect username or password"
 end
 
 # introductory screen
