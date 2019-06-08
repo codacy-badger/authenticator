@@ -42,14 +42,12 @@ while attempts > 0
   puts
 
 # validating user input vs hash
-
 auth_user_output = auth_user(username, password, users)
 puts auth_user_output
 puts
 attempts -= 1
 
 # output messages for various stages of sucess/failure
-
 if attempts >= 1 && auth_user_output.class == String
   puts "You have #{attempts} attempts remaining"
   puts
@@ -69,6 +67,5 @@ input = gets.chomp.downcase
 system "clear" or system "cls"
 
 # break out of loop if user has chosen to do so early
-
 break if input == "n"
 end
