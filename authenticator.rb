@@ -1,3 +1,4 @@
+# hash of users
 users = [
           { username: "rob", password: "password1" },
           { username: "paul", password: "password2" },
@@ -6,6 +7,7 @@ users = [
           { username: "jazz", password: "password5" }
         ]
 
+# main method to check hash for match
 def auth_user(username, password, list_of_users)
   list_of_users.each do |user_record|
     if user_record[:username] == username && user_record[:password] == password
@@ -16,6 +18,8 @@ def auth_user(username, password, list_of_users)
     end
   end
 end
+
+# introductory screen
 system "clear" or system "cls"
 puts "Welcome to the authenticator"
 25.times { print "-" }
@@ -24,6 +28,7 @@ puts "This program will take an input from the user and compare the respective p
 puts "If the password is correct you will get back the user object"
 puts
 
+# loop to set max attempts to 3 then force exit
 attempts = 3
 
 while attempts > 0
@@ -36,10 +41,14 @@ while attempts > 0
   puts ""
   puts
 
+# validating user input vs hash
+
 auth_user_output = auth_user(username, password, users)
 puts auth_user_output
 puts
 attempts -= 1
+
+# output messages for various stages of sucess/failure
 
 if attempts >= 1 && auth_user_output.class == String
   puts "You have #{attempts} attempts remaining"
@@ -58,5 +67,8 @@ end
 
 input = gets.chomp.downcase
 system "clear" or system "cls"
+
+# break out of loop if user has chosen to do so early
+
 break if input == "n"
 end
