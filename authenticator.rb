@@ -25,7 +25,6 @@ puts "Welcome to the authenticator"
 25.times { print "-" }
 puts
 puts "This program will take an input from the user and compare the respective password"
-puts "If the password is correct you will get back the user object"
 puts
 
 # loop to set max attempts to 3 then force exit
@@ -43,18 +42,20 @@ while attempts > 0
 
 # validating user input vs hash
 auth_user_output = auth_user(username, password, users)
-puts auth_user_output
-puts
 attempts -= 1
 
 # output messages for various stages of sucess/failure
 if attempts >= 1 && auth_user_output.class == String
+  puts auth_user_output
+  puts
   puts "You have #{attempts} attempts remaining"
   puts
-  puts "Press n to quit or any other key to continue"
+  puts "Type n to quit or any other key to continue"
 end
 
 if attempts == 0 && auth_user_output.class == String
+  puts auth_user_output
+  puts
   puts "That was your final attempt, the program will now exit"
 end
 
