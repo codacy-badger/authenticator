@@ -1,4 +1,4 @@
-# user data
+# initiating information to check
 users = [
   { username: 'rob', password: 'password1' },
   { username: 'paul', password: 'password2' },
